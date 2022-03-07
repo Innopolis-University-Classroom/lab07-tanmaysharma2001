@@ -2,21 +2,8 @@
 #include <cmath>
 using namespace std;
 
-int main()
-{
-    double bill;
-    double tiptotal;
-    double total;
-    double tip;
-
-    cout<<"\n\nWelcome to tip Calculator\n";
-    cout <<"------------------------------\n";
-    cout << "Enter bill amount: "<<"$";
-    cin>> bill;
-
-    cout<< "Enter Tip: "<<"%";
-    cin>> tip;
-
+template <typename T>
+T tipGenerator(T tip, T bill, T tiptotal, T total) {
     if (tip<20)
     {
         cout<< "\n Oh you can give a better tip than that!\n";
@@ -38,6 +25,25 @@ int main()
         cout << "The total Bill with Tip is: "<<"$"<< total << "\n\n";
         cout << "You are helping me through College!! Thankyou!!\n";
     }
+    return 0;
+}
+
+int main()
+{
+    double bill;
+    double tiptotal;
+    double total;
+    double tip;
+
+    cout<<"\n\nWelcome to tip Calculator\n";
+    cout <<"------------------------------\n";
+    cout << "Enter bill amount: "<<"$";
+    cin>> bill;
+
+    cout<< "Enter Tip: "<<"%";
+    cin>> tip;
+
+    tipGenerator(tip, bill, tiptotal, total);
 
     return 0;
 }
